@@ -1,11 +1,7 @@
-FROM nginx:stable-alpine3.24-perl
+FROM nginx:stable-alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
-RUN apk add --no-cache curl
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
-ENV NGINX_PORT=8080
-EXPOSE $NGINX_PORT
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx","-g","daemon off;"]
