@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: carlosfonsecam/nginx-openshift:v1
+        image: carlosfonsecam/nginx-openshift:v2
         ports:
         - containerPort: 8080
         volumenMonts:
