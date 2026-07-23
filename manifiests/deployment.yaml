@@ -17,3 +17,9 @@ spec:
         image: carlosfonsecam/nginx-openshift:v1
         ports:
         - containerPort: 8080
+        volumenMonts:
+        - name: tmp 
+          mountPath: /tmp
+      volumes:
+      - name: tmp
+        emptyDir: {}
