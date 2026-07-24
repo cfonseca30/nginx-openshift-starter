@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+   name: laboratorio
+   namespace: openshift-gitops
+spec:
+   description: Laboratorio GitOps
+   sourceRepos:
+      - '*'
+   destinations:
+      - namespace: 'nginx-demo'
+        server: https://kubernetes.default.svc
+   clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
