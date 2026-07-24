@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: carlosfonsecam/nginx-openshift:v3
+        image: carlosfonsecam/nginx-openshift:v4
         ports:
         - containerPort: 8080
-        volumenMonts:
+        volumeMounts:
         - name: tmp 
           mountPath: /tmp
       volumes:
